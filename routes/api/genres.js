@@ -1,4 +1,5 @@
 const express = require('express');
+const request = require("request");
 const models = require('../../models/index');
 const router = express.Router();
 
@@ -15,7 +16,7 @@ router.get('/', ( req, res ) => {
 router.get('/:id', (req, res) => {
   const id = req.params.id
   models.Genre.findByPk(id, {
-            include: [{ model: models.Track }]
+            include: [{ model: models.Track },{model: models.Classement}]
   })
     .then( genreResponse => {
       res.status( 200 ).json( genreResponse )
@@ -29,8 +30,7 @@ router.get('/:id', (req, res) => {
 router.get('/:id/scan', ( req, res ) => {
   
   const id = req.params.id
-  models.Genre.findByPk(id, {
-  })
+  models.Genre.findByPk(id)
     .then( genreResponse => {
       request({
         uri: genreResponse.link,
