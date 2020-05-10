@@ -4,18 +4,22 @@
   "description": "Api de classement beatport",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Simon",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "got": "^11.1.2",
-    "i": "^0.3.6",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "request": "^2.88.2",
     "sequelize": "^5.21.7",
     "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "i": "^0.3.6",
+    "nodemon": "^2.0.3"
   }
 }
