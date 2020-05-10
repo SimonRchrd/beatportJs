@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Genre.associate = function(models) {
     models.Genre.hasMany(models.Track);
+    models.Genre.hasMany(models.Classement);
   };
 
   return Genre;

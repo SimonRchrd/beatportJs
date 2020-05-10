@@ -21,7 +21,9 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
+    models.Track.hasMany(models.TrackRanking);
   };
+  
 
   return Track;
 };
